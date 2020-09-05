@@ -7,4 +7,12 @@ export default class Circle extends Figure {
         this.speedY = speedY;
         this.radius = radius;
     }
+
+    draw(context) {
+        context.beginPath();
+        context.fillStyle = this.color;
+        context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+        context.fill();
+        context.closePath();
+    }
 }
