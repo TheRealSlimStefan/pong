@@ -2,17 +2,90 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pong</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pong</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="all.js"></script>
 </head>
 
 <body>
-  <canvas></canvas>
+    <div class="main">
 
-  <!-- Using js modules by adding type="module"  in script tag-->
-  <script src="main.js" type="module"></script>
+        <div data-slide="main-menu" class="main-menu active">
+            <div class="logo">
+                <h1>PONG</h1>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li data-change-slide="two-players-menu">Player vs Player</li>
+                    <li data-change-slide="player-bot-menu">Player vs Bot</li>
+                    <li data-change-slide="scores">Scores</li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-slide="two-players-menu" class="two-players-menu">
+            <div class="logo">
+                <h1>PONG</h1>
+            </div>
+            <div class="menu">
+                <div class="player-one-name">Player 1: <input type="text"></div>
+                <div class="player-two-name">Player 2: <input type="text"></div>
+            </div>
+            <div class="buttons">
+                <button data-change-slide="main-menu"><i class="fas fa-arrow-left"></i></button>
+                <button data-change-slide="game"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div data-slide="player-bot-menu" class="player-bot-menu">
+            <div class="logo">
+                <h1>PONG</h1>
+            </div>
+            <div class="menu">
+                <div class="player-one-name">Player: <input type="text"></div>
+                <div class="player-two-name">Computer: <input type="text"></div>
+            </div>
+            <div class="buttons">
+                <button data-change-slide="main-menu"><i class="fas fa-arrow-left"></i></button>
+                <button data-change-slide="game"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div data-slide="scores" class="scores">
+            <h1>motherfucking scores</h1>
+            <!-- <div class="logo">
+                <h1>PONG</h1>
+            </div>
+            <div class="menu">
+                <div class="player-one-name">Player: <input type="text"></div>
+                <div class="player-two-name">Computer: <input type="text"></div>
+            </div>
+            <div class="buttons">
+                <button data-change-slide="main-menu"><i class="fas fa-arrow-left"></i></button>
+                <button><i class="fas fa-arrow-right"></i></button>
+            </div> -->
+        </div>
+
+        <div data-slide="game" class="game">
+            <div class="stats">
+                <div class="playerOneStats">
+                    <span>Player 1: 0</span>
+                </div>
+                <div class="playerTwoStats">
+                    <span>Player 2: 0</span>
+                </div>
+            </div>
+            <div class="game-holder">
+                <canvas></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Using js modules by adding type="module"  in script tag-->
+    <script src="main.js" type="module"></script>
 </body>
 
 </html>

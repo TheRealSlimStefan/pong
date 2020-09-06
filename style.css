@@ -1,12 +1,291 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* 
+czcionka:
+    font-family: 'Roboto', sans-serif;
+
+kolory:
+     czerwony: #E65B3C;
+     żólty: #F0BF3E;
+     zielony: #90D943;
+     morski: #3EF0C3;
+     niebieski: #677BEB;
+*/
+
+:root {
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  color: white;
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  background-color: #677beb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* main div */
+
+div.main {
+  height: 100vh;
+  max-width: 700px;
+}
+
+/* logo div */
+
+div.logo {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh / 2);
+}
+
+div.logo h1 {
+  align-self: center;
+  font-size: 120px;
+}
+
+/* main-menu div */
+
+div.main-menu {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 100%;
+  transition: 0.3s;
+}
+
+div.main-menu.active {
+  top: 0;
+  left: 0;
+}
+
+div.main-menu div.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh / 3);
+}
+
+div.main-menu div.menu ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+div.main-menu div.menu ul li {
+  padding: 20px 25px;
+  text-align: center;
+  cursor: pointer;
+}
+
+div.main-menu div.menu ul li:hover {
+  background-color: #fff;
+  color: #677beb;
+}
+
+/* two-players-menu div */
+
+div.two-players-menu {
+  transition: 0.3s;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 100%;
+}
+
+div.two-players-menu.active {
+  top: 0;
+  left: 0;
+}
+
+div.two-players-menu div.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh * 5 / 24);
+}
+
+div.two-players-menu div.menu div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  width: 25%;
+}
+
+@media (max-width: 700px) {
+  div.two-players-menu div.menu div {
+    width: 50%;
+  }
+}
+
+div.two-players-menu div.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: calc(100vh * 7 / 24);
+}
+
+div.two-players-menu div.buttons button {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  outline: none;
+  background-color: #677beb;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+div.two-players-menu div.buttons button:hover {
+  background-color: white;
+  color: #677beb;
+}
+
+/* player-bot-menu-div */
+
+div.player-bot-menu {
+  transition: 0.3s;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 100%;
+}
+
+div.player-bot-menu.active {
+  top: 0;
+  left: 0;
+}
+
+div.player-bot-menu div.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh * 5 / 24);
+}
+
+div.player-bot-menu div.menu div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  width: 25%;
+}
+
+@media (max-width: 700px) {
+  div.player-bot-menu div.menu div {
+    width: 50%;
+  }
+}
+
+div.player-bot-menu div.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: calc(100vh * 7 / 24);
+}
+
+div.player-bot-menu div.buttons button {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  outline: none;
+  background-color: #677beb;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+div.player-bot-menu div.buttons button:hover {
+  background-color: white;
+  color: #677beb;
+}
+
+/* scores */
+
+div.scores {
+  transition: 0.3s;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 100%;
+}
+
+div.scores.active {
+  top: 0;
+  left: 0;
+}
+
+/* div.player-bot-menu div.menu {
     display: flex;
-    height: 100vh;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: calc(100vh * 4 /24);
+}
+
+div.player-bot-menu div.menu div {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    width: 30%;
+}
+
+@media(max-width: 700px) {
+    div.player-bot-menu div.menu div {
+        width: 50%;
+    }
+}
+
+div.player-bot-menu div.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100vh * 8 / 24);
+}
+
+div.player-bot-menu div.buttons button {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    outline: none;
+    background-color: #677BEB;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+div.player-bot-menu div.buttons button:hover {
+    background-color: white;
+    color: #677BEB;
+} */
+
+/* scores */
+
+div.game {
+  transition: 0.3s;
+  position: absolute;
+  top: 0;
+  left: -150%;
+  height: 100vh;
+  width: 100%;
+}
+
+div.game.active {
+  top: 0;
+  left: 0;
 }
